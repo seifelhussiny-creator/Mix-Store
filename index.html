@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="style.css">
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,123 +17,210 @@
 
 </head>
 
-
 <body>
-
 
 <header class="header">
 
-<div class="logo">
-Mix Store
-</div>
+    <div class="logo">
+        🛒 Mix Store
+    </div>
 
+    <a href="cart.html" class="cart">
+        🛒 السلة
+    </a>
+    <footer class="footer">
 
-<a href="cart.html" class="cart">
-🛒 السلة
-</a>
+    
 
+    <p>العنوان: المنيا - تلة - الشارع الجديد - أمام مخبز جمال</p>
+
+    <p>📞 01015272249</p>
+
+    <p>☎️ 0862145334</p>
+
+</footer>
 
 </header>
 
-
-
 <section class="hero">
 
-<h1>
-Mix Store
-</h1>
+    <h1>مرحبًا بك في Mix Store</h1>
 
-<p>
-كل منتجاتك في مكان واحد
-</p>
+    <p>
+        كل منتجات الألبان والمواد الغذائية و الحلويات في مكان واحد
+    </p>
 
-
-<a href="#sections" class="shop-btn">
-ابدأ التسوق
-</a>
+    <a href="#sections" class="shop-btn">
+        ابدأ التسوق
+    </a>
 
 </section>
 
+<!-- شريط البحث -->
 
+<div class="search-box">
 
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 ابحث عن أي منتج أو شركة..."
+        onkeydown="searchProduct(event)">
+
+</div>
 
 <h2 class="section-title" id="sections">
 الأقسام
 </h2>
 
-
-
 <div class="categories">
 
+    <!-- قسم الجبن -->
+    <a href="cheese.html" class="category">
 
+        <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600">
 
-<a href="cheese.html" class="category">
+        <h3>🧀 قسم الجبن</h3>
 
+        <p>اضغط لعرض الشركات والمنتجات</p>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL5w0SCF8quXwttI8gtHgs_WJnb-RLaKAw_l-JN97y2w&s=10">
+    </a>
 
+    <!-- قسم السبريدات -->
+    <a href="products.html?company=spreads" class="category">
 
-<h3>
-🧀 قسم الجبن
-</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS9o5DQqfj2CdjxX-KBj_vS0SrHCg5zNuIJD2fkLFG9A&s=10">
 
+        <h3>🥜 قسم السبريدات</h3>
 
-<p>
-اضغط لعرض الشركات والمنتجات
-</p>
+        <p>شيكولاتة - زبدة فول سوداني - سبريد</p>
 
+    </a>
 
-</a>
+    <!-- قسم المجمدات -->
+    <a href="frozen.html" class="category">
 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG3BzriH76z3F0GiiiJlbAFyC39wqFi4_amcV2SH8K4g&s=10">
 
+        <h3>🧊 قسم المجمدات</h3>
 
+        <p>اضغط لعرض المنتجات</p>
 
+    </a>
 
-<a href="frozen.html" class="category">
+    <!-- قسم المعجنات -->
+    <a href="pastry.html" class="category">
 
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600">
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8vUhnHqLTIHI3U4s1_ftTyxCB2TEe--qIUdV5ehRJbA&s=10">
+        <h3>🥐 قسم المعجنات</h3>
 
+        <p>اضغط لعرض المنتجات</p>
 
-<h3>
-🧊 قسم المجمدات
-</h3>
+    </a>
+   <!-- قسم الصوصات -->
+<a href="sauces.html" class="category">
 
+    <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=600">
 
-<p>
-اضغط لعرض المنتجات
-</p>
+    <h3>🥫 قسم الصوصات</h3>
 
-
-</a>
-
-
-
-
-
-<a href="pastry.html" class="category">
-
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzgwu_lgkLLUX_730al-km3xXWLlO36fLtAsVhRlSPcA&s=10">
-
-
-<h3>
-🥐 قسم المعجنات
-</h3>
-
-
-<p>
-اضغط لعرض المنتجات
-</p>
-
+    <p>اضغط لعرض المنتجات</p>
 
 </a>
 
+<!-- قسم الحلويات -->
+<a href="desserts.html" class="category">
 
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSch0xLSXHXaGSug42jE74mxB4bvvU6h2WfPNUbDJCYRw&s=10">
 
+    <h3>🍰 قسم الحلويات</h3>
+
+    <p>خامات الحلويات والتزيين</p>
+
+</a>
+
+<!-- قسم الحاجات البلدي -->
+
+<a href="balady.html" class="category">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjMvmSG1Rasni3mVY_gWGIk9AJlADNrkduvIKV18_uzQ&s=10">
+
+    <h3>🥘 قسم الحاجات البلدي</h3>
+
+    <p>سمنة - ملوخية - فريك - منتجات بلدي</p>
+
+</a>
+<!-- قسم الكاندي -->
+
+<a href="candy.html" class="category">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM9JYTddXRsZtHSF1OuLOUzT0J40C1TeX_brIhV4U_zA&s=10">
+
+<h3>🍬 قسم الكاندي</h3>
+
+<p>شوكولاتة - بسكوت - حلويات</p>
+
+</a>
+<a href="honey.html" class="category">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9g4hqqu0Bh9XA9EL0-oMFeImP1CYb2eyHFgt6C1cSFw&s=10" alt="العسل والتمور">
+
+    <h3>🍯 عسل النحل والتمور</h3>
+
+    <p>عسل طبيعي وتمور فاخرة</p>
+
+</a>
+<a href="flour.html" class="category">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhml2hL1-WK5GWKu5XHKfOsObBlulvRVCTvXHh69ridg&s=10">
+
+    <h3>🌾 أنواع الدقيق</h3>
+
+    <p>دقيق حبوب كاملة - سميد - شوفان - أرز والمزيد</p>
+
+</a>
+<a href="oils.html" class="category">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuD5cBkydndv3cq4RaSGfnadFYeOdfFVOBPA7A5v65-Q&s=10">
+
+<h3>🫒 الزيوت الطبيعية</h3>
+
+<p>زيوت طبيعية وعلاجية وعناية بالشعر والبشرة</p>
+
+</a>
+<a href="hotdrinks.html" class="category">
+
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+
+    <h3>☕ المشروبات الساخنة</h3>
+
+    <p>قهوة - نسكافيه - شاي - سكر بني</p>
+
+</a>
+<a href="misc.html" class="category">
+
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+
+<h3>🛒 ركن المنوع</h3>
+
+<p>مكرونة - أرز - بطاطس - بقسماط - كريمة - مشروم - شوفان</p>
+
+</a>
+<a href="spices.html" class="category">
+
+    <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757">
+
+    <h3>🌶️ ركن التوابل</h3>
+
+    <p>بهارات وتوابل شرقية وغربية</p>
+
+</a>
 </div>
 
 
+
+    
+<script src="search.js"></script>
 
 </body>
 
