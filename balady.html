@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>قسم الحاجات البلدي - Mix Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="top-bar">
+
+<a href="index.html" class="back">
+⬅ رجوع
+</a>
+
+<h2>🥘 قسم الحاجات البلدي</h2>
+
+
+<a href="cart.html" class="cart">
+🛒 <span>0</span>
+</a>
+
+</header>
+
+
+
+<div id="baladyProducts"></div>
+
+
+<script src="cart.js"></script>
+
+
+<script>
+
+
+const baladyProducts = [
+
+{
+name:"سمنة جاموسي كيلو",
+price:395,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFRuYgBlPBCvB2VAO_50ZaAVV2bj1Mm1migQozSYzvtg&s=10"
+},
+
+
+{
+name:"سمنة بقري كيلو",
+price:340,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1jQOGWc6edY77Uks1wNJ6NBwiKv3oM_KmLJeOZ-ur6A&s=10"
+},
+
+
+{
+name:"ملوخية ناشفة متكرمة كيلو",
+price:110,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIKmM383hcHU9dbYppC2Z5UJHXpp6lo0X--lWLIdYfow&s=10"
+},
+
+
+{
+name:"فريك متنقي كيلو",
+price:70,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgHafEyLdX-P4nSrlbU56cfZ6_9C9CE7-wliFABK-wiQ&s=10"
+},
+
+
+{
+name:"محمومه",
+price:70,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8yOWClAZWR0kFxDIQElKeLHdKejCyyoMBghweRke7Ww&s=10"
+},
+
+
+{
+name:"كشك كيلو",
+price:100,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ11qszq0h0aT-syQMCLAhkbW_mi9nTeDpOtuilDgeDg&s=10"
+},
+
+
+{
+name:"شعرية كيلو",
+price:60,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4v_3JVfA1TWS3bkgyQBg-RrYU2h2sBmeQPa1nTnQVuw&s=10"
+}
+
+
+];
+
+
+
+let box=document.getElementById("baladyProducts");
+
+
+
+baladyProducts.forEach(product=>{
+
+
+box.innerHTML += `
+
+
+<div class="product">
+
+
+<img src="${product.image}"
+style="width:100%;height:180px;object-fit:cover;border-radius:15px;">
+
+
+
+<h3>${product.name}</h3>
+
+
+
+<p class="price">
+${product.price} جنيه
+</p>
+
+
+
+<button onclick="addToCart('${product.name}',${product.price})">
+
+🛒 أضف للسلة
+
+</button>
+
+
+
+</div>
+
+
+`;
+
+
+});
+
+
+</script>
+
+
+<script src="search.js"></script>
+
+
+</body>
+
+</html>

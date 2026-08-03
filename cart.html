@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سلة المشتريات - Mix Store</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    margin:0;
+    background:#f8f8f8;
+}
+
+
+header{
+    background:#e91e63;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+
+h1{
+    margin:0;
+}
+
+
+.cart-container{
+
+    padding:30px;
+    max-width:900px;
+    margin:auto;
+
+}
+
+
+.product{
+
+    background:white;
+    margin-bottom:15px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 10px #ccc;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+.product h3{
+
+    color:#e91e63;
+    margin:0;
+
+}
+
+
+.price{
+
+    font-size:18px;
+    font-weight:bold;
+
+}
+
+
+.delete{
+
+    background:red;
+    color:white;
+    border:0;
+    padding:8px 15px;
+    border-radius:15px;
+    cursor:pointer;
+
+}
+
+
+.total{
+
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    font-size:25px;
+    font-weight:bold;
+    margin-top:20px;
+
+}
+
+
+.buttons{
+
+    text-align:center;
+    margin-top:25px;
+
+}
+
+
+button,.back{
+
+    background:#e91e63;
+    color:white;
+    border:0;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+    text-decoration:none;
+    margin:5px;
+
+}
+
+
+.empty{
+
+    text-align:center;
+    font-size:25px;
+    color:#777;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🛒 سلة المشتريات</h1>
+
+<p>Mix Store</p>
+
+</header>
+
+
+
+<div class="cart-container">
+
+
+<div id="cartItems"></div>
+
+
+<div class="total" id="total">
+
+الإجمالي: 0 جنيه
+
+</div>
+
+
+<div class="buttons">
+
+<a class="back" href="index.html">
+العودة للتسوق
+</a>
+
+<button onclick="clearCart()">
+تفريغ السلة
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+function showCart(){
+
+let box=document.getElementById("cartItems");
+
+let total=0;
+
+
+if(cart.length===0){
+
+box.innerHTML=
+`
+<div class="empty">
+السلة فارغة 🛒
+</div>
+`;
+
+return;
+
+}
+
+
+
+cart.forEach((item,index)=>{
+
+
+total += item.price;
+
+
+
+box.innerHTML +=
+
+`
+<div class="product">
+
+<div>
+
+<h3>${item.name}</h3>
+
+<p class="price">
+${item.price} جنيه
+</p>
+
+</div>
+
+
+<button class="delete" onclick="removeItem(${index})">
+
+حذف
+
+</button>
+
+
+</div>
+
+`;
+
+});
+
+
+document.getElementById("total").innerHTML=
+
+"الإجمالي: "+total+" جنيه";
+
+
+}
+
+
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+location.reload();
+
+}
+
+
+
+function clearCart(){
+
+localStorage.removeItem("cart");
+
+location.reload();
+
+}
+
+
+
+showCart();
+
+
+</script>
+
+
+</body>
+
+</html>

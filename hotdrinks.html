@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>قسم المشروبات الساخنة - Mix Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="top-bar">
+
+<a href="index.html" class="back">
+⬅ رجوع
+</a>
+
+<h2>☕ قسم المشروبات الساخنة</h2>
+
+<a href="cart.html" class="cart">
+🛒 <span>0</span>
+</a>
+
+</header>
+
+<div id="hotDrinksProducts"></div>
+
+<script src="cart.js"></script>
+
+<script>
+
+const hotDrinksProducts=[
+
+{
+name:"قهوة ساده موكا",
+price:185,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThaH7tQ2TQjtzGzX5ReWTtWoNiOM_rwrs7XgylZS9yrg&s=10"
+},
+
+{
+name:"قهوة محوج موكا",
+price:210,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrmJ0ezvBm6P0Jay7k8hJ5jooBZp_9-RMprTL2FZpM_w&s=10"
+},
+
+{
+name:"قهوة بندق موكا",
+price:210,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-qIQWsgzxHB7F6W1N3nFX8ylTuJn29PhxoV7eeudXDw&s=10"
+},
+
+{
+name:"قهوة محمد افندي تركي",
+price:125,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW4ikkaWa7w0qCo_ZDCR-PKGnO8z7hlJbmEj-dWFEp5g&s"
+},
+
+{
+name:"نسكافيه بلاك ابو عوف",
+price:85,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfDlStVMStiscrvnHh2hkEwSJkHWhnd2peSw-usX0u2w&s=10"
+},
+
+{
+name:"كيس نسكافيه مستورد",
+price:15,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHWYUFGzO1bBkdw3Pj2EMUaTqxTEVhbAo_2kUEFHHPUQ&s=10"
+},
+
+{
+name:"كيس شاي كرك",
+price:12,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_fh0wu49ruhVY7j2tQMGrTEKr-C8hB2v4zwryNFdK-A&s"
+},
+
+{
+name:"شاي كرفس وبقدونس",
+price:45,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyhVdG3cXyGVTujGxryCybR0yUILkXs1blNkQ3VoM5w&s=10"
+},
+
+{
+name:"شاي ملطف للكحه",
+price:45,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB1beDO_8IScdPSFHPL1nu7BTMr6EMzggcQ8-WNtsUeg&s=10"
+},
+
+{
+name:"شاي مهدئ بالكاموميل",
+price:60,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL4YoDuCFfrkfnjZ-l5x12YDbK9FXhc3ijGtR6fVhIcQ&s=10"
+},
+
+{
+name:"شاي اسمر سيلاني",
+price:30,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq3zbXOC7YrFpoHs9RczkaVRPQ5_mof76mbKepCi3dFw&s=10"
+},
+
+{
+name:"سكر بني",
+price:90,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD82w5iPebzhTz5RIfXzGKRywKS2tAzrkjlrG26liq0w&s=10"
+}
+
+];
+
+let box=document.getElementById("hotDrinksProducts");
+
+hotDrinksProducts.forEach(product=>{
+
+box.innerHTML += `
+
+<div class="product">
+
+<img src="${product.image}"
+style="width:100%;height:180px;object-fit:cover;border-radius:15px;">
+
+<h3>${product.name}</h3>
+
+<p class="price">
+${product.price} جنيه
+</p>
+
+<button onclick="addToCart('${product.name}',${product.price})">
+
+🛒 أضف للسلة
+
+</button>
+
+</div>
+
+`;
+
+});
+
+</script>
+
+<script src="search.js"></script>
+
+</body>
+
+</html>

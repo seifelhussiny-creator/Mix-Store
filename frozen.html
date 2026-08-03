@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>قسم المجمدات - Mix Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header class="top-bar">
+
+<a href="index.html" class="back">
+⬅ رجوع
+</a>
+
+<h2>🧊 قسم المجمدات</h2>
+
+<a href="cart.html" class="cart">
+🛒 <span>0</span>
+</a>
+
+</header>
+
+
+
+
+
+<div id="frozenProducts"></div>
+
+
+
+<script src="cart.js"></script>
+
+
+<script>
+
+
+const frozenProducts = [
+
+{
+name:"استربس بريسكيت",
+price:210,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSwHKurHmUJoDIXEBOqVVjn5IzueXQmDTXItpzeWlS9A&s=10"
+},
+
+{
+name:"استربس سمارت",
+price:240,
+image:"https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec"
+},
+
+{
+name:"ستربس ولعتين",
+price:280,
+image:"https://images.unsplash.com/photo-1569058242253-92a9c755a0ec"
+},
+
+{
+name:"برجر جست",
+price:225,
+image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
+},
+
+{
+name:"كفته جست",
+price:225,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_FMlLAdjqZhgH24BelQa7ByVikMlJIuEwXQLgAbJjSw&s=10"
+},
+
+{
+name:"سجق سمارت كيلو",
+price:230,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5N2nvCX02T3ltKSIq2OUghS73SM3wnq0FtSe2MGfWKA&s=10"
+},
+
+{
+name:"سجق بلدي",
+price:430,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROSRxrgPV8fLFoYKFn6uVUuM_bJtnFdp1Kip2WstPHQA&s=10"
+},
+
+{
+name:"مسحب سمارت",
+price:225,
+image:"https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58"
+},
+
+{
+name:"كوردن بلو",
+price:215,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbw-f5cMMx-6TZtrLYIg7l_B2HXSRjt2iR_UtaxKmDTg&s=10"
+},
+
+{
+name:"جمبري ولعتين",
+price:695,
+image:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47"
+},
+
+{
+name:"ناجتس شهد",
+price:135,
+image:"https://images.unsplash.com/photo-1562967914-608f82629710"
+},
+
+{
+name:"موتزاريلا ستيكس",
+price:180,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSUe0fNnNIk-TToSt6wK0-jvDY8VGDePcat2TxbuKQ&s=10"
+},
+
+{
+name:"بانيه فريش ساده",
+price:185,
+image:"https://images.unsplash.com/photo-1604503468506-a8da13d82791"
+},
+
+{
+name:"بانيه متبل",
+price:230,
+image:"https://images.unsplash.com/photo-1532550907401-a500c9a57435"
+},
+
+{
+name:"رنجه ابو السيد",
+price:185,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbnG7yCNaud0kxWd3CwtXAJNgwpNtUf2LofNJjphxfMw&s=10"
+},
+
+{
+name:"فيليه بياض نص",
+price:140,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKJpUqzGUby2AuLL-n8EqczZpCG12yrgqxNz_TIgV1Qg&s=10"
+},
+
+{
+name:"جمبري فريش نص",
+price:350,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Otz5d-lFG4-2X4JfV8uXC4HqM0XIGFFfhAUXWchgnQ&s=10"
+},
+
+{
+name:"سمك بلطي نيلي",
+price:110,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_b7ywGOfKXZzNUIYwViUawx-OiFIr1zvzqDDcdnZRYg&s=10"
+},
+
+{
+name:"لحمه مفرومه برازيلي",
+price:320,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmWUKB3jStcpX1NcV-9sRMxmPS6feR0HXUbx_06IJhMQ&s"
+},
+
+{
+name:"بط مسكوفي فريش",
+price:120,
+image:"https://images.unsplash.com/photo-1518492104633-130d0cc84637"
+},
+
+{
+name:"فراخ بلدي",
+price:130,
+image:"https://images.unsplash.com/photo-1587593810167-a84920ea0781"
+}
+
+
+];
+
+
+let box=document.getElementById("frozenProducts");
+
+
+frozenProducts.forEach(product=>{
+
+
+box.innerHTML += `
+
+<div class="product">
+
+
+<img src="${product.image}" 
+style="width:100%;height:180px;object-fit:cover;border-radius:15px;">
+
+
+<h3>${product.name}</h3>
+
+
+<p class="price">
+${product.price} جنيه
+</p>
+
+
+<button onclick="addToCart('${product.name}',${product.price})">
+
+🛒 أضف للسلة
+
+</button>
+
+
+</div>
+
+`;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

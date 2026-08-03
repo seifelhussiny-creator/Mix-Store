@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>قسم المعجنات - Mix Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="top-bar">
+
+<a href="index.html" class="back">
+⬅ رجوع
+</a>
+
+
+<h2>🥐 قسم المعجنات</h2>
+
+
+<a href="cart.html" class="cart">
+🛒 <span>0</span>
+</a>
+
+
+</header>
+
+
+
+
+
+
+
+<div id="pastryProducts"></div>
+
+
+
+<script src="cart.js"></script>
+
+
+<script>
+
+
+const pastryProducts = [
+
+
+{
+name:"كيزر ماك",
+price:110,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTudTX9SPQZPiuoHK7pkPkKP-jqgvHl1BHN8FnhgaSRNA&s=10"
+},
+
+
+{
+name:"بريوش",
+price:115,
+image:"https://images.unsplash.com/photo-1555507036-ab1f4038808a"
+},
+
+
+{
+name:"توست",
+price:60,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4GErzCr8USRcq2jPa4z-VP9MmJrA1k2GcOJm95FYNFg&s=10"
+},
+
+
+{
+name:"عيش سوري 5 قطع",
+price:15,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQZKUAhfNapSQA2kgVYmEpm-65GHMKp8ys2ERJpijQBQ&s=10"
+},
+
+
+{
+name:"كريب 5 قطع بالحجز",
+price:55,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8vrxybwYIwPXMziGfTeE9slOcVnC0YECQGbhpjhFsQA&s=10"
+},
+
+
+{
+name:"سمبوسة الروضة",
+price:26,
+image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7"
+},
+
+
+{
+name:"سمبوسة الحريف",
+price:30,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMffWCAWiKn8B2GLz2g4hwLZCushX3JrN7iowVX3_Yg&s=10"
+},
+
+
+{
+name:"سبرنج الروضة",
+price:26,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShflBTrvhIRg_Rq53r9juLnUgp45rKnJNQctxQ5j3Cfw&s"
+},
+
+
+{
+name:"جلاش",
+price:15,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz4dhFGxSIz3Rkebpl3EkNhDEHja6uoKoiSqImaIZ5mw&s=10"
+},
+
+
+{
+name:"تورتيلا ريتش بيك",
+price:60,
+image:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f"
+},
+
+
+{
+name:"رقاق نص",
+price:35,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy1k5eDsgxwpSf3UCsDV4TGW6iKMUvaePjQQhPom_EcQ&s=10"
+},
+
+
+{
+name:"شريك",
+price:140,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyWkaTcj5tbbRIXA7iq-oIugnzzqofFpEz0adBsq7Sbg&s=10"
+},
+
+
+{
+name:"قرص قشطه",
+price:150,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1oLfIKUWusRlf4gI5pavyaq3GzT04cosUWZo3Sw1eqg&s=10"
+},
+
+{
+name:"باتيه بالجبنه ",
+price:175,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRohOscT6zR6nHgo5MgftB08pEOiQmWNI54aPGdgeDktg&s=10"
+},
+
+{
+name:"بيتزا",
+price:45,
+image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6XmPZZENmjlFPWLYL9IfKa-hr1LBDHmn64GGJQu6gsw&s=10"
+},
+
+];
+
+
+
+let box=document.getElementById("pastryProducts");
+
+
+
+pastryProducts.forEach(product=>{
+
+
+box.innerHTML += `
+
+
+<div class="product">
+
+
+<img src="${product.image}">
+
+
+
+<h3>
+
+${product.name}
+
+</h3>
+
+
+
+<p class="price">
+
+${product.price} جنيه
+
+</p>
+
+
+
+<button onclick="addToCart('${product.name}',${product.price})">
+
+🛒 أضف للسلة
+
+</button>
+
+
+
+</div>
+
+
+`;
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
